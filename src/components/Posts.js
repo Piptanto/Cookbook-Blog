@@ -12,6 +12,7 @@ export default function Posts(props) {
     }
 
     return (
+
         <>
         {
         props.posts.map((element, id) => (
@@ -40,4 +41,5 @@ export default function Posts(props) {
         )}
         </>
         )
+
     }
