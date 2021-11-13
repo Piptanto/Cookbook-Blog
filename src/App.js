@@ -1,23 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { client } from './client';
+import {useState, useEffect} from 'react';
+import Posts from './components/Posts'
 
 function App() {
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => loadEntries(), [])
+  
+  const loadEntries = async () => {
+    const response = await client.getEntries();
+    console.log(response.items);
+    setArticles(response.items);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <div className='container'>
+      <header>
+        <div className="wrapper"></div>
       </header>
+      <main>
+      <div className="wrapper">
+        <Posts  posts={articles}/>
+      </div>
+      </main>
+      </div>
     </div>
   );
 }
