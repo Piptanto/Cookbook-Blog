@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Praise&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+  
+  .post {
+
+    font-family: Arial, Helvetica, sans-serif;
+    
+  border: rgb(250, 152, 39) solid 2px;
+  border-radius: 4px;
+  margin: 10px;
+  margin-top: 130px;
+  width: 20vw;
+  padding: 20px;
+  background-color: rgb(255, 245, 225);
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  min-width: 20%;
+  max-width: 20%;
+
+  
+  }
+
+  h2{
+    margin-top: 0px;
+      margin-bottom: 0px;
+       font-family: 'Oswald', sans-serif;
+      font-size: 1.8em;
+      color: rgb(226, 121, 0)
+  }
+
+  .post p {
+      text-align: left;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.1em;
+      line-height: 140%;
+      
+
+  }
+
+  
+
+  .post img{
+      width: 235px;
+      border-radius: 50%;
+      height: 235px;
+      object-fit: cover; 
+      margin-top: -135px; 
+      border: 8px solid rgb(255, 238, 200);   
+      
+      
+  }

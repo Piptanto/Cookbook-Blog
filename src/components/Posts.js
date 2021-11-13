@@ -9,8 +9,9 @@ export default function Posts(props) {
     {
     props.posts.map((element, id) => (
         <div className="post" key={id}>
-            <h2>{element?.fields?.name}</h2>
             <img src={element?.fields?.image?.fields?.file?.url}  className="recipeImage"/>
+            <h2>{element?.fields?.name}</h2>
+            
             <div><ReactMarkdown>{element?.fields?.description}</ReactMarkdown></div>
         </div>
     )

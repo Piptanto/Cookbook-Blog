@@ -39,10 +39,14 @@ header{
   background-position: center;
   height: 300px;
 }
-h3{
+h6{
   font-family: 'Praise', cursive;
   font-size: 6em;
   font-weight: lighter;
+}
+
+h3 {
+  color: deeppink;
 }
 header .wrapper{
   height: 100%;
@@ -59,6 +63,8 @@ header .wrapper{
 
 
 
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -68,17 +74,11 @@ header .wrapper{
   }
 }
 
-.recipeImage {
-  width: 30vw;
-  border-radius: 5px;
-}
+main .wrapper{
 
-.post {
-border: darkolivegreen solid 3px;
-border-radius: 10px;
-margin: 20px;
-width: 70vw;
-padding: 20px;
-background-color: rgba(175, 163, 145, 0.8);
-font-family:Verdana, Geneva, Tahoma, sans-serif;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
