@@ -19,7 +19,7 @@ function App() {
     <div className="App">
       <div className='container'>
       <header>
-        <div className="wrapper"></div>
+        <div className="wrapper"><h3>- It Tastes Awesome! - </h3> -</div>
       </header>
       <main>
       <div className="wrapper">

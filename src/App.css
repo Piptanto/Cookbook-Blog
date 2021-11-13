@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Praise&display=swap');
+
 .App {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url('./black-pepper-4404502_1920.jpg');
+  /* background-image: url('./black-pepper-4404502_1920.jpg'); */
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: rgb(255, 238, 200);
 }
 
 .App-logo {
@@ -30,9 +33,31 @@
   color: white;
 }
 
+header{
+  background-image: url("styles/images/vegetables.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 300px;
+}
+h3{
+  font-family: 'Praise', cursive;
+  font-size: 6em;
+  font-weight: lighter;
+}
+header .wrapper{
+  height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFCD10;
+    text-shadow: 3px 3px 0px #000;
+
+}
 .App-link {
   color: #61dafb;
 }
+
+
 
 @keyframes App-logo-spin {
   from {

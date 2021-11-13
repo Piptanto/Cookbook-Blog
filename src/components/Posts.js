@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-
+import './App.css';
 export default function Posts(props) {
     //const desponseHtml = marked(description);
 
@@ -9,7 +9,7 @@ export default function Posts(props) {
     {
     props.posts.map((element, id) => (
         <div className="post" key={id}>
-            <h1>{element?.fields?.name}</h1>
+            <h2>{element?.fields?.name}</h2>
             <img src={element?.fields?.image?.fields?.file?.url}  className="recipeImage"/>
             <div><ReactMarkdown>{element?.fields?.description}</ReactMarkdown></div>
         </div>
