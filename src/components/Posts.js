@@ -1,17 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactMarkdown from 'react-markdown';
 import '../styles/post.css';
 export default function Posts(props) {
     //const desponseHtml = marked(description);
 
+    const[visible, setVisible] = useState(false);
+   
+
+    function Growbig(){
+        visible? setVisible(false): setVisible(true);
+    }
+
     return (
         <>
         {
         props.posts.map((element, id) => (
-            <div className="post" key={id}>
+            <div className={visible? "post postBig" : "post" } key={id} onClick={Growbig}>
                 <img src={element?.fields?.image?.fields?.file?.url}  className="recipeImage"/>
                 <h2>{element?.fields?.name}</h2>
-                <div className="hidden">
+                <div className={visible? "" : "hidden" }>
                 <p>{element?.fields?.description}</p>
                
                 <h3>Ingredients:</h3>
