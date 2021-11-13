@@ -19,34 +19,35 @@ function App() {
   // update an item in a Recipe
   const contentful = require('contentful-management')
 
-  async function Connect(){ 
+  async function Connect(){ //to connect with contentful
     let client = await contentful.createClient({
-      accessToken:  'CFPAT-cevXEVat_mA6Rr5j6Fvv5KVqeATbc99Gee87egSdsgU'
-      // accessToken:  process.env.REACT_APP_ACCESS_TOKEN
+      accessToken:  'CFPAT-cevXEVat_mA6Rr5j6Fvv5KVqeATbc99Gee87egSdsgU' //this key came from: Settings=> API keys=> Content management tokens (tab) =>  "Generate personal token" button.
     })
-    let space = await client.getSpace('gt4lfw53kejq');
-    return await space.getEnvironment('master');
+    let space = await client.getSpace('gt4lfw53kejq'); //this is the "Space ID". from Settings=> API keys=> Content delivery / preview tokens (tab).
+    return await space.getEnvironment('master'); //"master" is the defualt enviroment.
   }
 
-  async function updateCard(env, cardID){
-    let item = await env.getEntry(cardID)
+  async function updateRecipe(env, recipeID){ //to update an item in Recipe.
+    let item = await env.getEntry(recipeID) //this will save the recipe as object in the variable.
     //console.log(item.fields.name['en-US'])
     item.fields.name['en-US'] = 'Insalata Caprese';
-    await item.update();
-    item = await env.getEntry(cardID);
-    await item.publish();
+    //item.fields.name: in this case the name field will be changed to the new value between quotes.
+    //'en-US': is a key
+    await item.update(); //this will update the field in Contentful, but not published yet.
+    item = await env.getEntry(recipeID); //to fetch the last item status from Contentful before publishing.
+    await item.publish(); // to publish the changes.
   }
 
-  (async () => {
-    let env = await Connect();
-    await updateCard(env, '5VYaJdA8FsLTO3PWJyaYHj')
+  (async () => { //to fire the functions inside
+    let env = await Connect(); //By running this function, accessToken, Space ID, master, will be saved in env.
+    await updateRecipe(env, '5VYaJdA8FsLTO3PWJyaYHj') //pass the "env" and recipeID to updateRecipe
   })();
 
   return (
     <div className="App">
       <div className='container'>
       <header>
-        <div className="wrapper"></div>
+        <div className="wrapper"><h6>- It Tastes Awesome! - </h6> -</div>
       </header>
       <main>
       <div className="wrapper">
