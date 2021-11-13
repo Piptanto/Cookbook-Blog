@@ -13,10 +13,10 @@ export default function Posts(props) {
         setVisible([...oldArray])
     }
 
-    useEffect(() =>{
-        const newArray =[];
-        for (let item of props.posts) {newArray.push(false)}
-    },[]);
+    // useEffect(() =>{
+    //     const newArray =[];
+    //     for (let item of props.posts) {newArray.push(false)}
+    // },[]);
 
     return (
         <>
