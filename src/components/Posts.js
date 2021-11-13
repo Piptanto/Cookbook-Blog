@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import './App.css';
+import '../styles/post.css';
 export default function Posts(props) {
     //const desponseHtml = marked(description);
 
