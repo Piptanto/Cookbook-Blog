@@ -5,17 +5,32 @@ export default function Posts(props) {
     //const desponseHtml = marked(description);
 
     return (
-    <>
-    {
-    props.posts.map((element, id) => (
-        <div className="post" key={id}>
-            <img src={element?.fields?.image?.fields?.file?.url}  className="recipeImage"/>
-            <h2>{element?.fields?.name}</h2>
-            
-            <div><ReactMarkdown>{element?.fields?.description}</ReactMarkdown></div>
-        </div>
-    )
-    )}
-    </>
-    )
+        <>
+        {
+        props.posts.map((element, id) => (
+            <div className="post" key={id}>
+                <img src={element?.fields?.image?.fields?.file?.url}  className="recipeImage"/>
+                <h2>{element?.fields?.name}</h2>
+                <div className="hidden">
+                <p>{element?.fields?.description}</p>
+               
+                <h3>Ingredients:</h3>
+                <ul className="ingredients">
+                {
+                element?.fields?.ingredients2?.map((element,id) => (
+                      <li key={id}>{element}</li>
+                ))}
+                </ul>
+                <h3>Preparation:</h3>
+                <ol className="preparation">
+                {
+                element?.fields?.preparation4?.map((element,id) => (
+                      <li key={id}>{element}</li>
+                ))}
+                </ol></div>
+            </div>
+        )
+        )}
+        </>
+        )
     }

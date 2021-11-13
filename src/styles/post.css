@@ -4,6 +4,7 @@
   .post {
 
     font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
     
   border: rgb(250, 152, 39) solid 2px;
   border-radius: 4px;
@@ -19,7 +20,11 @@
   
   }
 
-  h2{
+  h2 {
+      text-align: center;
+  }
+
+  h2,  .post h3 {
     margin-top: 0px;
       margin-bottom: 0px;
        font-family: 'Oswald', sans-serif;
@@ -27,24 +32,47 @@
       color: rgb(226, 121, 0)
   }
 
+  .post h3 {
+    font-size: 1.5em;
+  }
+
+  .post li{
+    list-style-type: circle;
+    margin-bottom: 15px; }
+
+    .post li::marker{
+        color: rgb(226, 121, 0);
+    }
+
   .post p {
       text-align: left;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 1.1em;
-      line-height: 140%;
-      
+      line-height: 140%;  
+
 
   }
 
-  
+  .post ul, .post ol {
+    margin-left: -1.2em;  
+  }
+
+  .hidden{
+      height: 0px;
+      overflow: hidden;
+  }
 
   .post img{
       width: 235px;
       border-radius: 50%;
       height: 235px;
-      object-fit: cover; 
-      margin-top: -135px; 
-      border: 8px solid rgb(255, 238, 200);   
+      object-fit: cover;  
+      border: 8px solid rgb(255, 238, 200);
+      display: block;
+      margin: 0 auto;
+      
+      margin-top: -135px;
+
       
       
   }
