@@ -1,24 +1,32 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import ReactMarkdown from 'react-markdown';
 import '../styles/post.css';
 export default function Posts(props) {
     //const desponseHtml = marked(description);
 
-    const[visible, setVisible] = useState(false);
+    const[visible, setVisible] = useState([]);
    
 
-    function Growbig(){
-        visible? setVisible(false): setVisible(true);
+    const growbig =(id) => {
+        const oldArray = [...visible];
+        oldArray[id] = !visible[id];
+        setVisible([...oldArray])
     }
+
+    useEffect(() =>{
+        const newArray =[];
+        for (let item of props.posts) {newArray.push(false)}
+    },[]);
 
     return (
         <>
         {
         props.posts.map((element, id) => (
-            <div className={visible? "post postBig" : "post" } key={id} onClick={Growbig}>
+            // {setVisible([...visible, false])}
+            <div className={visible[id]? "post postBig" : "post" } key={id} onClick={() => growbig(id)}>
                 <img src={element?.fields?.image?.fields?.file?.url}  className="recipeImage"/>
                 <h2>{element?.fields?.name}</h2>
-                <div className={visible? "" : "hidden" }>
+                <div className={visible[id]? "" : "hidden" }>
                 <p>{element?.fields?.description}</p>
                
                 <h3>Ingredients:</h3>
