@@ -15,7 +15,6 @@ function App() {
     setArticles(response.items);
   }
 
-
   // update an item in a Recipe
   const contentful = require('contentful-management')
 
