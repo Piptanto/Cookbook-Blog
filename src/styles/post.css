@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
   *{
       transition: all 0.8s ease-in;
+   transition: all 0.2s ease-in;
   }
   .post {
 
