@@ -24,8 +24,8 @@ export default function Posts(props) {
         {
         props.posts.map((element, id) => (
             // {setVisible([...visible, false])}
-            <div className={visible[id]? "post postBig" : "post" } key={id} onClick={() => growbig(id)}>
-                <img src={element?.fields?.image?.fields?.file?.url}  className="recipeImage"/>
+            <div className={visible[id]? "post postBig" : "post" } key={id} >
+                <img src={element?.fields?.image?.fields?.file?.url}  className="recipeImage" onClick={() => growbig(id)}/>
                 <h2>{element?.fields?.name}</h2>
                 <div className={visible[id]? "" : "hidden" }>
                 <p>{element?.fields?.description}</p>

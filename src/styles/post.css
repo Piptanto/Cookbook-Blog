@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Praise&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
   *{
-      transition: all 2s ease-in;
+      transition: all 0.8s ease-in;
+      transition: color 0.2 ease-in;
   }
   .post {
 
@@ -37,18 +38,22 @@
       margin-bottom: 0px;
        font-family: 'Oswald', sans-serif;
       font-size: 1.8em;
-      color: rgb(226, 121, 0)
+      color:  rgb(226, 121, 0)
   }
 
   .post h3 {
     font-size: 1.5em;
   }
 
-  .post li{
+  .post ul li{
     list-style-type: circle;
     margin-bottom: 15px; }
 
-    .post li::marker{
+    .post ol li{
+        margin-bottom: 15px; }
+    
+
+    .post ul li::marker{
         color: rgb(226, 121, 0);
     }
 
@@ -84,3 +89,5 @@
       
       
   }
+
+  
