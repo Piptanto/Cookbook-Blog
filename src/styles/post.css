@@ -7,6 +7,7 @@
   .post {
 
     font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
     
   border: rgb(250, 152, 39) solid 2px;
   border-radius: 4px;
@@ -24,7 +25,7 @@
 .postBig{
   min-width: 100%;
   max-width: 100%;
-
+  text-align: left;
   
   }
 
@@ -86,5 +87,5 @@
   
 .FaUtensils {
   font-size: 24pt;
-  border: 10px;
+  border-left: auto;
 }
