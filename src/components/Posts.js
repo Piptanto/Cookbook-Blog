@@ -52,8 +52,8 @@ export default function Posts(props) {
                       <li key={id}>{element}</li>
                 ))}
                 </ol></div>
-                <FaUtensils
-        color={favorite[id] ? "orange" : "lightgrey"}
+                <FaUtensils className='FaUtensils'
+        color={favorite[id] ? "rgb(226, 121, 0)" : "lightgrey"}
         onClick={() => favoriteSelection(id)}
         style={{ cursor: "pointer" }}
       />
