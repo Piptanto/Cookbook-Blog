@@ -23,6 +23,10 @@ nav {
     position: absolute;
 
   } 
+
+  .navcolor{
+      color: rgb(226, 121, 0);
+  }
   
   menu:after {
     clear : both;
@@ -128,3 +132,23 @@ nav {
    
     transform: scale(1.1);
   }
+
+  @media only screen and (max-width: 980px ) {
+      menu, .ribbon {
+        display: none;
+      }
+
+      nav {
+          background-color: rgba(255, 255, 255, 0);
+          display: flex;
+          justify-content: center;
+
+      }
+
+      .mobile{
+          display: block;
+          margin: 0 auto;
+      }
+  }
+
+  

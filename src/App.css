@@ -84,3 +84,23 @@ main .wrapper{
 main {
   margin-top: 100px;
 }
+
+@media only screen and (max-width: 980px ) {
+  main .wrapper{
+    
+    width: 95%;
+    margin: 0 auto;
+  }
+ 
+  h6{
+    
+    font-size: 3em;
+  }
+header{
+  background-image: url("styles/images/vegetables.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 300px;
+}
+
+}

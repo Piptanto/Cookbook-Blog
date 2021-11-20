@@ -13,10 +13,9 @@
   border-radius: 4px;
   margin: 10px;
   margin-top: 130px;
-  width: 20vw;
+  width: 20%;
   padding: 20px;
   background-color: rgb(255, 245, 225);
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
   min-width: 20%;
   max-width: 20%;
 
@@ -90,4 +89,86 @@
       
   }
 
+  @media only screen and (max-width: 599px) {
+  }
+
+
+
+
+@media only screen and (max-width: 1500px ) {
+	.post img{
+        width: 100%;
+        border-radius: 5px;
+        height: 235px;
+        object-fit: cover;  
+        border: none;
+        display: block;
+        margin: 0 auto;
+        
+        margin-top:0 ;         
+        
+    }
+
+    .post {
+
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: left;
+        
+      border: rgb(250, 152, 39) solid 2px;
+      border-radius: 4px;
+      margin: 10px;
+      margin-top: 30px;
+      width: 20vw;
+      padding: 20px;
+      background-color: rgb(255, 245, 225);
+      font-family:Arial, Helvetica, sans-serif;
+      min-width: 40%;
+      max-width: 40%;
+    
+      
+      }
+}
+
+@media only screen and (max-width: 980px ) {
+    .post img{
+        width: 100%;
+        border-radius: 5px;
+        height: 235px;
+        object-fit: cover;  
+        border: none;
+        display: block;
+        margin: 0 auto;
+        
+        margin-top:0 ;         
+        
+    }
+
+    
+
+    .post {
+
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: left;
+        
+      border: rgb(250, 152, 39) solid 2px;
+      border-radius: 4px;
+      margin: 10px;
+      margin-top: 30px;
+      width: 20vw;
+      padding: 20px;
+      background-color: rgb(255, 245, 225);
+      font-family:Arial, Helvetica, sans-serif;
+      min-width: 90%;
+      max-width:90%;
+    
+      
+      }
+	
+}
+
+.postBig{
+    min-width: 100%;
+    max-width: 100%;
   
+    
+    }
