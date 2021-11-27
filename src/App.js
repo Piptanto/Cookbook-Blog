@@ -7,17 +7,23 @@ import AddPost from './components/AddPost';
 
 function App() {
   const [articles, setArticles] = useState([]);
+  const [status, setStatus] = useState(false);
 
-  useEffect(() => loadEntries(), [])
+  function changeStatus(index) {
+    const newstatus = !status;
+    setStatus(newstatus);
+    console.log(status);
+    const result = articles.filter( articles => articles.sys.id !== index)
+    setArticles(result);
+  }
+
+  useEffect(() => loadEntries(), [status])
 
   const loadEntries = async () => {
     const response = await client.getEntries();
-    console.log(response.items[1].fields.name);
+    console.log(response.items);
     setArticles(response.items);
   }
-
-
-  
 
   /* async function Connect() { //to connect with contentful
 
@@ -67,7 +73,7 @@ function App() {
         </header>
         <main>
           <div className="wrapper">
-            <Posts posts={articles} />
+            <Posts posts={articles} cb={changeStatus}/>
           </div>
         </main>
           <AddPost />

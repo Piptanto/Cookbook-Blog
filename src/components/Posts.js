@@ -1,7 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, { useContext, useState, useEffect} from 'react';
 import ReactMarkdown from 'react-markdown';
 import '../styles/post.css';
-import { FaUtensils } from "react-icons/fa";
+import { client } from '../client';
+import { FaUtensils, FaMinusCircle } from "react-icons/fa";
+
+const contentful = require('contentful-management')
+
 
 export default function Posts(props) {
     //const desponseHtml = marked(description);
@@ -22,10 +26,22 @@ export default function Posts(props) {
         const newFavorites = [...favorite];
       newFavorites[id] = ! newFavorites[id];
        setFavorite([...newFavorites]);
-        console.log(favorite[id]);
-        console.log(favorite);
 
     };
+
+    const client = contentful.createClient({
+        accessToken: 'CFPAT-cevXEVat_mA6Rr5j6Fvv5KVqeATbc99Gee87egSdsgU'
+      })
+
+        async function Unpublish(id) {
+    await client.getSpace('gt4lfw53kejq')
+    .then((space) => space.getEnvironment('master'))
+    .then((environment) => environment.getEntry(id.toString()))
+    .then((entry) => entry.unpublish())
+    .then((entry) => console.log(`Entry ${entry.sys.id} unpublished.`))
+    .catch(console.error);
+    props.cb(id);
+      }
 
     return (
 
@@ -57,6 +73,9 @@ export default function Posts(props) {
         onClick={() => favoriteSelection(id)}
         style={{ cursor: "pointer" }}
       />
+        <FaMinusCircle className='FaMinusCircle'
+        onClick ={() => Unpublish(element?.sys?.id)}
+        />
             </div>
         )
         )}
