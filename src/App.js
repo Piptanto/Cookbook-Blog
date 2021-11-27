@@ -16,9 +16,16 @@ function App() {
     setArticles(response.items);
   }
 
+
   
 
   /* async function Connect() { //to connect with contentful
+
+  // update an item in a Recipe
+  const contentful = require('contentful-management')
+
+  async function Connect(){ //to connect with contentful
+
     let client = await contentful.createClient({
       accessToken: 'CFPAT-cevXEVat_mA6Rr5j6Fvv5KVqeATbc99Gee87egSdsgU' //this key came from: Settings=> API keys=> Content management tokens (tab) =>  "Generate personal token" button.
     })

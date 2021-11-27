@@ -1,33 +1,41 @@
 import React, {useState, useEffect} from 'react';
 import ReactMarkdown from 'react-markdown';
 import '../styles/post.css';
+import { FaUtensils } from "react-icons/fa";
+
 export default function Posts(props) {
     //const desponseHtml = marked(description);
 
-    const[visible, setVisible] = useState([]);
+    const[visible, setVisible] = useState(false);
+    const [favorite, setFavorite] = useState([]);
+
+    props.posts.map(obj=> ({ ...obj, favorite: 'false' }))
    
 
-    const growbig =(id) => {
-        const oldArray = [...visible];
-        oldArray[id] = !visible[id];
-        setVisible([...oldArray])
+    function Growbig(){
+        visible? setVisible(false): setVisible(true);
     }
 
-    // useEffect(() =>{
-    //     const newArray =[];
-    //     for (let item of props.posts) {newArray.push(false)}
-    // },[]);
+    useEffect(() => favoriteSelection(), [])
+
+    const favoriteSelection = (id) => { 
+        const newFavorites = [...favorite];
+      newFavorites[id] = ! newFavorites[id];
+       setFavorite([...newFavorites]);
+        console.log(favorite[id]);
+        console.log(favorite);
+
+    };
 
     return (
 
         <>
         {
         props.posts.map((element, id) => (
-            // {setVisible([...visible, false])}
-            <div className={visible[id]? "post postBig" : "post" } key={id} onClick={() => growbig(id)}>
-                <img src={element?.fields?.image?.fields?.file?.url}  className="recipeImage"/>
+            <div className={visible? "post postBig" : "post" } key={id}>
+                <img src={element?.fields?.image?.fields?.file?.url}  className="recipeImage" onClick={Growbig}/>
                 <h2>{element?.fields?.name}</h2>
-                <div className={visible[id]? "" : "hidden" }>
+                <div className={visible? "" : "hidden" }>
                 <p>{element?.fields?.description}</p>
                
                 <h3>Ingredients:</h3>
@@ -44,6 +52,11 @@ export default function Posts(props) {
                       <li key={id}>{element}</li>
                 ))}
                 </ol></div>
+                <FaUtensils className='FaUtensils'
+        color={favorite[id] ? "rgb(226, 121, 0)" : "lightgrey"}
+        onClick={() => favoriteSelection(id)}
+        style={{ cursor: "pointer" }}
+      />
             </div>
         )
         )}
