@@ -63,7 +63,6 @@ function App() {
     <div className="App">
       <div className='container'>
         <header>
-          <AddPost />
           <div className="wrapper"><h6>- It Tastes Awesome! - </h6> -</div>
         </header>
         <main>
@@ -71,6 +70,7 @@ function App() {
             <Posts posts={articles} />
           </div>
         </main>
+          <AddPost />
       </div>
     </div>
   );
