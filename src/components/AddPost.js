@@ -7,6 +7,7 @@ import '../styles/addPost.css';
 export default function AddPost() {
 
     const [text, setText] = useState();
+    const [proper, setProper] = useState(false);
    
      const handleChange = (e) =>{
         e.preventDefault()
@@ -129,9 +130,12 @@ export default function AddPost() {
         <div className='Preview'>
             <h3>Preview</h3>
             <div className="preview">
-                <p>{RName}</p>
+                <h2>{RName}</h2>
+                <h5 className="prevHead">Description</h5>
                 <p>{RDescription}</p>
-                <ul>{ List(RIngredients2)}</ul>
+                <h5 className="prevHead">{RIngredients2? "Ingredients" : ""}</h5>
+                <ul>{List(RIngredients2)}</ul>
+                <h5 className="prevHead">{RIngredients2? "Preparation" : ""}</h5>
                 <ol>{List(RRreparation4)}</ol>
                 </div><div>
             <button className='addRecipeBtn' onClick={handleClick}>Add Recipe</button>
@@ -141,10 +145,21 @@ export default function AddPost() {
     )
 }
 
+
+    
+    
+//   setProper(!proper);
+// console.log(proper) })
+
+
 const List =(props) =>{
- const newArray = props.map(giveitout)
-  function giveitout(props){
-      return <li>{props}</li>
-  }
-  return newArray
+    
+    console.log(props   )
+return props.map((item, id) => (
+    <li key={id}>{item}<span className="deleteMe" onClick = { ()=>props.splice(id, 1)}
+  
+  >   ×</span></li>
+))
+
+
 }

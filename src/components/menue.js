@@ -2,6 +2,8 @@ import React, {useState, useEffect} from "react";
 import '../styles/menu1.css';
 import { IoIosMenu } from "react-icons/io";
 
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+
 
 
 export default function Menu(props){
@@ -37,7 +39,7 @@ export default function Menu(props){
                 <li onClick ={() => props.cb('Lunch')}>Lunch</li>
                 <li onClick ={() => props.cb('Dinner')}>Dinner</li>
                 <li onClick ={() => props.cb('Snack')}>Snacks</li>            
-                <li>New Recipe</li>
+                <li><AnchorLink href='#form'>New Recipe</AnchorLink></li>
             
             
             
