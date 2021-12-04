@@ -47,9 +47,6 @@ export default function AddPost() {
         setRIngredients2(arr => [...arr, `${text}`]);
         document.getElementById('ingredientInput').value = '';
         document.getElementById("ingredientInput").focus();
-        // let p = document.getElementById('ingShow')
-        // p.innerText = RIngredients2;
-        // document.getElementById('ingShow').innerHTML = `<div>${RIngredients2.map(item => `<li>${item}</li>`)}</div>`
         // console.log('from setIngredients',RIngredients2)
     }
 
@@ -60,7 +57,7 @@ export default function AddPost() {
         // console.log('from setPreparation',RRreparation4)
     }
 
-    const [addCategory, setAddCategory] = useState("");
+    const [addCategory, setAddCategory] = useState('Snack');
     function handleCategory(e) {
         setAddCategory(e.target.value);
         console.log(addCategory);
@@ -86,6 +83,7 @@ export default function AddPost() {
                 fields:
                 {
                     name: { 'en-US': RName },
+                    category: { 'en-US': addCategory },
                     description: { 'en-US': RDescription },
                     ingredients2: { 'en-US': RIngredients2 },
                     preparation4: { 'en-US': RRreparation4 }
@@ -117,7 +115,7 @@ export default function AddPost() {
                     <div className='inputF'>
                     <label>Choose Category: </label>
                         <select
-                            // defaultValue={addCategory}
+                            defaultValue={addCategory}
                             onChange={handleCategory}
                             className= 'inputF'
                         >
