@@ -2,7 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
   *{
 
+
+
       transition: all 0.1s ease-in;
+      
+      transition: color 0.2 ease-in;
+
+
   }
   .post {
 
@@ -13,10 +19,9 @@
   border-radius: 4px;
   margin: 10px;
   margin-top: 130px;
-  width: 20vw;
+  width: 20%;
   padding: 20px;
   background-color: rgb(255, 245, 225);
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
   min-width: 20%;
   max-width: 20%;
 
@@ -38,18 +43,22 @@
       margin-bottom: 0px;
        font-family: 'Oswald', sans-serif;
       font-size: 1.8em;
-      color: rgb(226, 121, 0)
+      color:  rgb(226, 121, 0)
   }
 
   .post h3 {
     font-size: 1.5em;
   }
 
-  .post li{
+  .post ul li{
     list-style-type: circle;
     margin-bottom: 15px; }
 
-    .post li::marker{
+    .post ol li{
+        margin-bottom: 15px; }
+    
+
+    .post ul li::marker{
         color: rgb(226, 121, 0);
     }
 
@@ -82,6 +91,93 @@
       
       margin-top: -135px;
 
+      
+      
+  }
+
+  @media only screen and (max-width: 599px) {
+  }
+
+
+
+
+@media only screen and (max-width: 1500px ) {
+	.post img{
+        width: 100%;
+        border-radius: 5px;
+        height: 235px;
+        object-fit: cover;  
+        border: none;
+        display: block;
+        margin: 0 auto;
+        
+        margin-top:0 ;         
+        
+    }
+
+    .post {
+
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: left;
+        
+      border: rgb(250, 152, 39) solid 2px;
+      border-radius: 4px;
+      margin: 10px;
+      margin-top: 30px;
+      width: 20vw;
+      padding: 20px;
+      background-color: rgb(255, 245, 225);
+      font-family:Arial, Helvetica, sans-serif;
+      min-width: 40%;
+      max-width: 40%;
+    
+      
+      }
+}
+
+@media only screen and (max-width: 980px ) {
+    .post img{
+        width: 100%;
+        border-radius: 5px;
+        height: 235px;
+        object-fit: cover;  
+        border: none;
+        display: block;
+        margin: 0 auto;
+        
+        margin-top:0 ;         
+        
+    }
+
+    
+
+    .post {
+
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: left;
+        
+      border: rgb(250, 152, 39) solid 2px;
+      border-radius: 4px;
+      margin: 10px;
+      margin-top: 30px;
+      width: 20vw;
+      padding: 20px;
+      background-color: rgb(255, 245, 225);
+      font-family:Arial, Helvetica, sans-serif;
+      min-width: 90%;
+      max-width:90%;
+    
+      
+      }
+	
+}
+
+.postBig{
+    min-width: 100%;
+    max-width: 100%;
+  
+    
+    
   }
 
   
