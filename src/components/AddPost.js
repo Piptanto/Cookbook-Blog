@@ -97,13 +97,17 @@ export default function AddPost() {
     }
 
     return (
+        <div id="form"><h2 id="sBigger">Add New Recipe</h2>
+        <div className="forFlexing">
         <div className='inputForum'>
-            <h2>Add New Recipe</h2>
+            
             <div className='inputF'>Through this form you can add new recipes. Please enter the required data and click on the add button for each field, and when finished click on the “Add Recipe” button</div>
             <div className='inputF'>
             <label>Recipe Name: </label>
+            
             <input id='nameInput' type="text" onChange={handleChange}></input>
             <button onClick={setName}>add</button>
+            
             </div>
             <div className='inputF'>
             <label>Description: </label>
@@ -124,5 +128,23 @@ export default function AddPost() {
             <button className='addRecipeBtn' onClick={handleClick}>Add Recipe</button>
             </div>
         </div>
+        <div className='Preview'>
+            <h3>Preview</h3>
+            <div className="preview">
+                <p>{RName}</p>
+                <p>{RDescription}</p>
+                <ul>{ List(RIngredients2)}</ul>
+                <ol>{List(RRreparation4)}</ol>
+                </div></div>
+        </div>
+        </div>
     )
+}
+
+const List =(props) =>{
+ const newArray = props.map(giveitout)
+  function giveitout(props){
+      return <li>{props}</li>
+  }
+  return newArray
 }
