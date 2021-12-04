@@ -81,6 +81,7 @@ main .wrapper{
   justify-content: center;
 }
 
+
 main {
   margin-top: 100px;
 }
@@ -104,3 +105,10 @@ header{
 }
 
 }
+
+.FaMinusCircle {
+  color: rgb(226, 121, 0);
+  font-size: 18pt;
+  margin-left: 10pt;
+}
+

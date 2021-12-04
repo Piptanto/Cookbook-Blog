@@ -1,22 +1,47 @@
-import React, {useState, useEffect} from 'react';
+import React, { useContext, useState, useEffect} from 'react';
 import ReactMarkdown from 'react-markdown';
 import '../styles/post.css';
+import { client } from '../client';
+import { FaUtensils, FaMinusCircle } from "react-icons/fa";
+
+const contentful = require('contentful-management')
+
+
 export default function Posts(props) {
     //const desponseHtml = marked(description);
 
-    const[visible, setVisible] = useState([]);
+    const[visible, setVisible] = useState(false);
+    const [favorite, setFavorite] = useState([]);
+
+    props.posts.map(obj=> ({ ...obj, favorite: 'false' }))
    
 
-    const growbig =(id) => {
-        const oldArray = [...visible];
-        oldArray[id] = !visible[id];
-        setVisible([...oldArray])
+    function Growbig(){
+        visible? setVisible(false): setVisible(true);
     }
 
-    // useEffect(() =>{
-    //     const newArray =[];
-    //     for (let item of props.posts) {newArray.push(false)}
-    // },[]);
+    useEffect(() => favoriteSelection(), [])
+
+    const favoriteSelection = (id) => { 
+        const newFavorites = [...favorite];
+      newFavorites[id] = ! newFavorites[id];
+       setFavorite([...newFavorites]);
+
+    };
+
+    const client = contentful.createClient({
+        accessToken: 'CFPAT-cevXEVat_mA6Rr5j6Fvv5KVqeATbc99Gee87egSdsgU'
+      })
+
+        async function Unpublish(id) {
+    await client.getSpace('gt4lfw53kejq')
+    .then((space) => space.getEnvironment('master'))
+    .then((environment) => environment.getEntry(id.toString()))
+    .then((entry) => entry.unpublish())
+    .then((entry) => console.log(`Entry ${entry.sys.id} unpublished.`))
+    .catch(console.error);
+    props.cb(id);
+      }
 
     return (
 
@@ -27,7 +52,7 @@ export default function Posts(props) {
             <div className={visible[id]? "post postBig" : "post" } key={id} >
                 <img src={element?.fields?.image?.fields?.file?.url}  className="recipeImage" onClick={() => growbig(id)}/>
                 <h2>{element?.fields?.name}</h2>
-                <div className={visible[id]? "" : "hidden" }>
+                <div className={visible? "" : "hidden" }>
                 <p>{element?.fields?.description}</p>
                
                 <h3>Ingredients:</h3>
@@ -44,6 +69,14 @@ export default function Posts(props) {
                       <li key={id}>{element}</li>
                 ))}
                 </ol></div>
+                <FaUtensils className='FaUtensils'
+        color={favorite[id] ? "rgb(226, 121, 0)" : "lightgrey"}
+        onClick={() => favoriteSelection(id)}
+        style={{ cursor: "pointer" }}
+      />
+        <FaMinusCircle className='FaMinusCircle'
+        onClick ={() => Unpublish(element?.sys?.id)}
+        />
             </div>
         )
         )}

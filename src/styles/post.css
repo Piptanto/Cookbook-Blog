@@ -1,13 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Praise&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
   *{
-      transition: all 0.8s ease-in;
+
+
+
+      transition: all 0.1s ease-in;
+      
       transition: color 0.2 ease-in;
+
+
   }
   .post {
 
     font-family: Arial, Helvetica, sans-serif;
-    text-align: left;
+    text-align: center;
     
   border: rgb(250, 152, 39) solid 2px;
   border-radius: 4px;
@@ -24,7 +30,7 @@
 .postBig{
   min-width: 100%;
   max-width: 100%;
-
+  text-align: left;
   
   }
 
@@ -171,4 +177,11 @@
     max-width: 100%;
   
     
-    }
+    
+  }
+
+  
+.FaUtensils {
+  font-size: 24pt;
+  border-left: auto;
+}
