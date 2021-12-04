@@ -163,58 +163,58 @@ export default function AddPost() {
     )
 }
 
-const List = (props) => {
-    const newArray = props.map(giveitout)
-    function giveitout(props) {
-        return <li>{props}</li>
-    }
-    return newArray
+// const List = (props) => {
+//     const newArray = props.map(giveitout)
+//     function giveitout(props) {
+//         return <li>{props}</li>
+//     }
+//     return newArray
 
-        <div className="forFlexing">
-        <div className='inputForum'>
+//         <div className="forFlexing">
+//         <div className='inputForum'>
             
-            <div className='inputF'>Through this form you can add new recipes. Please enter the required data and click on the add button for each field, and when finished click on the “Add Recipe” button</div>
-            <div className='inputF'>
-            <label>Recipe Name: </label>
+//             <div className='inputF'>Through this form you can add new recipes. Please enter the required data and click on the add button for each field, and when finished click on the “Add Recipe” button</div>
+//             <div className='inputF'>
+//             <label>Recipe Name: </label>
             
-            <input id='nameInput' type="text" onChange={handleChange}></input>
-            <button onClick={setName}>add</button>
+//             <input id='nameInput' type="text" onChange={handleChange}></input>
+//             <button onClick={setName}>add</button>
             
-            </div>
-            <div className='inputF'>
-            <label>Description: </label>
-            <textarea id='descriptionInput' name="message" rows="10" cols="30" onChange={handleChange}></textarea>
-            <button onClick={setDescription}>add</button>
-            </div>
-            <div className='inputF'>
-            <label>Ingredients: </label>
-            <input id='ingredientInput' type="text" onChange={handleChange}></input>
-            <button onClick={setIngredients}>add one</button>
-            </div>
-            <div className='inputF'>
-            <label>Preparation: </label>
-            <input id='preparationInput' type="text" onChange={handleChange}></input>
-            <button onClick={setPreparation}>add one</button>
-            </div>
+//             </div>
+//             <div className='inputF'>
+//             <label>Description: </label>
+//             <textarea id='descriptionInput' name="message" rows="10" cols="30" onChange={handleChange}></textarea>
+//             <button onClick={setDescription}>add</button>
+//             </div>
+//             <div className='inputF'>
+//             <label>Ingredients: </label>
+//             <input id='ingredientInput' type="text" onChange={handleChange}></input>
+//             <button onClick={setIngredients}>add one</button>
+//             </div>
+//             <div className='inputF'>
+//             <label>Preparation: </label>
+//             <input id='preparationInput' type="text" onChange={handleChange}></input>
+//             <button onClick={setPreparation}>add one</button>
+//             </div>
             
-        </div>
-        <div className='Preview'>
-            <h3>Preview</h3>
-            <div className="preview">
-                <h2>{RName}</h2>
-                <h5 className="prevHead">Description</h5>
-                <p>{RDescription}</p>
-                <h5 className="prevHead">{RIngredients2? "Ingredients" : ""}</h5>
-                <ul>{List(RIngredients2)}</ul>
-                <h5 className="prevHead">{RIngredients2? "Preparation" : ""}</h5>
-                <ol>{List(RRreparation4)}</ol>
-                </div><div>
-            <button className='addRecipeBtn' onClick={handleClick}>Add Recipe</button>
-            </div></div>
-        </div>
-        </div>
-    )
-}
+//         </div>
+//         <div className='Preview'>
+//             <h3>Preview</h3>
+//             <div className="preview">
+//                 <h2>{RName}</h2>
+//                 <h5 className="prevHead">Description</h5>
+//                 <p>{RDescription}</p>
+//                 <h5 className="prevHead">{RIngredients2? "Ingredients" : ""}</h5>
+//                 <ul>{List(RIngredients2)}</ul>
+//                 <h5 className="prevHead">{RIngredients2? "Preparation" : ""}</h5>
+//                 <ol>{List(RRreparation4)}</ol>
+//                 </div><div>
+//             <button className='addRecipeBtn' onClick={handleClick}>Add Recipe</button>
+//             </div></div>
+//         </div>
+//         </div>
+//     )
+// }
 
 
     
