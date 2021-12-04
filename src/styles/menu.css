@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Praise&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+  *{
+      transition: all 2s ease-in;
+      
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  #menu{
+      width: 60%;
+      margin: 0 auto;
+      background-color: rgb(226, 121, 0);
+      display: flex;
+      
+    justify-content: center;
+    margin-bottom: 150px;
+    border-radius: 4px;
+    box-shadow: 0 0 30px rgba(0,0,0,.15) inset,
+                        0 6px 10px rgba(0,0,0,.15);
+
+                        z-index: 1000;
+
+  }
+
+  li{
+      font-family:  'Oswald', sans-serif;
+      font-size: 1.6em;
+      margin: 10px 15px;
+      color: #FFCD10;
+    text-shadow: 2px 2px 0px #000;
+
+  }
+
+  #menu:after , #menu:before {
+    z-index: 500;
+    top       : 0;
+    width     : 140px;
+    height    : 76px;
+    /* background: deeppink; */
+    display : block;
+    content : "";
+    /* position: absolute; */
+
+   background-color:  rgb(226, 121, 0);
+    
+
+  border-radius: 4px;
+  box-shadow: 0 0 30px rgba(0,0,0,.15) inset,
+                      0 6px 10px rgba(0,0,0,.15);
+                      
+  } 
+  
+  #menu::after {
+    position: absolute;
+     right: 15%;
+     top: 320px; 
+    border-right : 1px solid deeppink;
+  }
+  
+ #menu::before {
+    position: absolute;
+    left: 15%;
+    top: 320px;
+    /* left  : -55px; */
+    border-left : 1px solid deeppink;
+  }
+  
+ 
