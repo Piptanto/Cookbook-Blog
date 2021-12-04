@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import '../styles/post.css';
 import { client } from '../client';
 import { FaUtensils, FaMinusCircle } from "react-icons/fa";
+import vegies from "../styles/images/vegetables.png"
 
 const contentful = require('contentful-management')
 
@@ -10,14 +11,17 @@ const contentful = require('contentful-management')
 export default function Posts(props) {
     //const desponseHtml = marked(description);
 
-    const[visible, setVisible] = useState(false);
+    const[visible, setVisible] = useState([]);
     const [favorite, setFavorite] = useState([]);
 
     props.posts.map(obj=> ({ ...obj, favorite: 'false' }))
    
 
-    function Growbig(){
-        visible? setVisible(false): setVisible(true);
+    const Growbig = (id) => {
+      setVisible([])
+      const newVisible = [... visible];
+      newVisible[id] = ! newVisible[id];
+        setVisible([...newVisible]);
     }
 
     useEffect(() => favoriteSelection(), [])
@@ -42,6 +46,7 @@ export default function Posts(props) {
     .catch(console.error);
     props.cb(id);
       }
+      
 
     return (
 
@@ -50,9 +55,9 @@ export default function Posts(props) {
         props.posts.map((element, id) => (
             // {setVisible([...visible, false])}
             <div className={visible[id]? "post postBig" : "post" } key={id} >
-                <img src={element?.fields?.image?.fields?.file?.url}  className="recipeImage" onClick={() => growbig(id)}/>
+                <img src={element?.fields?.image?.fields?.file?.url? element?.fields?.image?.fields?.file?.url: vegies} key={id} className="recipeImage" onClick={() => Growbig(id)}/>
                 <h2>{element?.fields?.name}</h2>
-                <div className={visible? "" : "hidden" }>
+                <div className={visible[id]? "" : "hidden" }>
                 <p>{element?.fields?.description}</p>
                
                 <h3>Ingredients:</h3>

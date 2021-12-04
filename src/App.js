@@ -76,9 +76,11 @@ function App() {
         <main>
           <div className="wrapper">
             <Posts posts={articles} cb={changeStatus}/>
+            <AddPost />
           </div>
+          
         </main>
-          <AddPost />
+          
       </div>
     </div>
   );
