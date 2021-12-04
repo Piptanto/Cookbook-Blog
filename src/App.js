@@ -9,6 +9,8 @@ import Menu from './components/menue';
 function App() {
   const [articles, setArticles] = useState([]);
   const [status, setStatus] = useState(false);
+  const [filtered, setFiltered] = useState(false);
+  const [filteredArticles, setFilteredArticles] = useState([]);
 
   function changeStatus(index) {
     const newstatus = !status;
@@ -24,6 +26,19 @@ function App() {
     const response = await client.getEntries();
     console.log(response.items);
     setArticles(response.items);
+  }
+
+  function filterFunction(category) {
+    //const newstatus = !status;
+    //setStatus(newstatus);
+    console.log(category);
+    const resultFiltered = articles.filter( articles => articles.fields.category === category)
+    setFilteredArticles(resultFiltered);
+    setFiltered(true);
+  }
+
+  function unfilterFunction() {
+    setFiltered(false);
   }
 
   /* async function Connect() { //to connect with contentful
@@ -71,12 +86,14 @@ function App() {
       <div className='container'>
         <header>
           <div className="wrapper"><h6>- It Tastes Awesome! - </h6> -</div>
-          <Menu />
+          <Menu cb={filterFunction} cb2={unfilterFunction}/>
         </header>
         <main>
           <div className="wrapper">
-            <Posts posts={articles} cb={changeStatus}/>
+
+            <Posts posts={filtered ? filteredArticles : articles} cb={changeStatus}/>
             <AddPost />
+
           </div>
           
         </main>
