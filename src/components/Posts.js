@@ -11,7 +11,7 @@ export default function Posts(props) {
     //const desponseHtml = marked(description);
 
     const[visible, setVisible] = useState(false);
-    const [favorite, setFavorite] = useState([false, false, false, false, false, false, false, false, false, false, false, false,]);
+    const [favorite, setFavorite] = useState([]);
 
     props.posts.map(obj=> ({ ...obj, favorite: 'false' }))
    
