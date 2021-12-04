@@ -124,9 +124,7 @@ export default function AddPost() {
             <input id='preparationInput' type="text" onChange={handleChange}></input>
             <button onClick={setPreparation}>add one</button>
             </div>
-            <div>
-            <button className='addRecipeBtn' onClick={handleClick}>Add Recipe</button>
-            </div>
+            
         </div>
         <div className='Preview'>
             <h3>Preview</h3>
@@ -135,7 +133,9 @@ export default function AddPost() {
                 <p>{RDescription}</p>
                 <ul>{ List(RIngredients2)}</ul>
                 <ol>{List(RRreparation4)}</ol>
-                </div></div>
+                </div><div>
+            <button className='addRecipeBtn' onClick={handleClick}>Add Recipe</button>
+            </div></div>
         </div>
         </div>
     )
