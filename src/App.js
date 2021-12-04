@@ -90,10 +90,14 @@ function App() {
         </header>
         <main>
           <div className="wrapper">
+
             <Posts posts={filtered ? filteredArticles : articles} cb={changeStatus}/>
+            <AddPost />
+
           </div>
+          
         </main>
-          <AddPost />
+          
       </div>
     </div>
   );
