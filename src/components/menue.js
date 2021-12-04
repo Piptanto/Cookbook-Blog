@@ -4,7 +4,7 @@ import { IoIosMenu } from "react-icons/io";
 
 
 
-export default function Menu(){
+export default function Menu(props){
     const [windowDimension, setWindowDimension] = useState(null);
     const [mNavClosed, setNavClosed] = useState(true);
 
@@ -25,16 +25,18 @@ export default function Menu(){
   const handleClick = () =>{
     mNavClosed? setNavClosed(false):setNavClosed(true)
   }
+
+
+
     return(
         <nav>
            <div> <IoIosMenu size ="70" color ="rgb(226, 121, 0)" className="mobile" onClick="handleClick"/></div>
         <menu className= {mNavClosed? "noned": "blocked"}>
-                <li>Home</li>
-                <li>Breakfast</li>
-                <li>Lunch</li>
-                <li>Diner</li>
-                <li>Snacks</li>
-                <li>My Favorites</li>                
+                <li onClick ={() => props.cb2()}>Home</li>
+                <li onClick ={() => props.cb('Breakfast')}>Breakfast</li>
+                <li onClick ={() => props.cb('Lunch')}>Lunch</li>
+                <li onClick ={() => props.cb('Dinner')}>Dinner</li>
+                <li onClick ={() => props.cb('Snack')}>Snacks</li>            
                 <li>New Recipe</li>
             
             
