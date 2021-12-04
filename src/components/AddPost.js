@@ -42,10 +42,14 @@ export default function AddPost() {
         // console.log('from setDescription ',RDescription)
     }
 
+    // useEffect(() => setIngredients(), []);
     function setIngredients() {
         setRIngredients2( arr => [...arr, `${text}`]);
         document.getElementById('ingredientInput').value = '';
         document.getElementById("ingredientInput").focus(); 
+        // let p = document.getElementById('ingShow')
+        // p.innerText = RIngredients2;
+        // document.getElementById('ingShow').innerHTML = `<div>${RIngredients2.map(item => `<li>${item}</li>`)}</div>`
         // console.log('from setIngredients',RIngredients2)
     }
 
@@ -103,17 +107,18 @@ export default function AddPost() {
             <div className='inputF'>
             <label>Recipe Name: </label>
             <input id='nameInput' type="text" onChange={handleChange}></input>
-            <button onClick={setName}>add</button>
+            <button onClick={setName}>add Recipe name</button>
             </div>
             <div className='inputF'>
             <label>Description: </label>
             <textarea id='descriptionInput' name="message" rows="10" cols="30" onChange={handleChange}></textarea>
-            <button onClick={setDescription}>add</button>
+            <button onClick={setDescription}>add Description</button>
             </div>
             <div className='inputF'>
             <label>Ingredients: </label>
             <input id='ingredientInput' type="text" onChange={handleChange}></input>
             <button onClick={setIngredients}>add one</button>
+            <div id='ingShow'></div>
             </div>
             <div className='inputF'>
             <label>Preparation: </label>
