@@ -109,6 +109,13 @@ nav {
   
 
   
+ .noned {margin: 10px auto;
+  padding-inline-start: 0px;}
+
+  a {
+    color: unset;
+    text-decoration: none;
+  }
 
   
 

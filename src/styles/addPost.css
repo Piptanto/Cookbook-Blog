@@ -1,3 +1,15 @@
+.deleteMe{
+    cursor: pointer;
+    font-weight: bold;
+} 
+
+.deleteMe:hover{
+  font-weight: bold;
+  color: rgb(255, 94, 0);
+  transform: scale(1.7);
+}
+  
+  
   .inputForum {
     text-align: left;
     
@@ -18,10 +30,20 @@
     width:45%;
     display: flex;
     flex-direction: column;
-    margin: 30px 0
+    margin: 30px 0;
 
-      
   }
+
+ .Preview p, .Preview li {
+     text-align: left !important; 
+     margin-left: 30px;
+     color: #333;
+    
+    }
+    h5{
+        color: lightslategrey
+    }
+
   #form{
     width: 100%;
     margin: 0 auto;
@@ -78,3 +100,5 @@
       font-size: 2.1rem;
 
   }
+
+ 
