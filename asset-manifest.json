@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Cookbook-Blog/static/css/main.a5bc8eba.chunk.css",
+    "main.js": "/Cookbook-Blog/static/js/main.037487fe.chunk.js",
+    "main.js.map": "/Cookbook-Blog/static/js/main.037487fe.chunk.js.map",
+    "runtime-main.js": "/Cookbook-Blog/static/js/runtime-main.38b53070.js",
+    "runtime-main.js.map": "/Cookbook-Blog/static/js/runtime-main.38b53070.js.map",
+    "static/js/2.6a6397f3.chunk.js": "/Cookbook-Blog/static/js/2.6a6397f3.chunk.js",
+    "static/js/2.6a6397f3.chunk.js.map": "/Cookbook-Blog/static/js/2.6a6397f3.chunk.js.map",
+    "static/js/3.b2a80db8.chunk.js": "/Cookbook-Blog/static/js/3.b2a80db8.chunk.js",
+    "static/js/3.b2a80db8.chunk.js.map": "/Cookbook-Blog/static/js/3.b2a80db8.chunk.js.map",
+    "index.html": "/Cookbook-Blog/index.html",
+    "static/css/main.a5bc8eba.chunk.css.map": "/Cookbook-Blog/static/css/main.a5bc8eba.chunk.css.map",
+    "static/js/2.6a6397f3.chunk.js.LICENSE.txt": "/Cookbook-Blog/static/js/2.6a6397f3.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/Cookbook-Blog/static/media/vegetables.663a1a43.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.38b53070.js",
+    "static/js/2.6a6397f3.chunk.js",
+    "static/css/main.a5bc8eba.chunk.css",
+    "static/js/main.037487fe.chunk.js"
+  ]
+}
