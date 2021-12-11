@@ -79,10 +79,9 @@
       background-color: transparent;
       border: 1px solid rgb(250, 152, 39);
       border-radius: 5px;
-      margin-left: 10px;
+      margin-left: 16px;
       color: rgb(221, 107, 0);
-      /* font-size: 10px; */
-      width: 60px;
+      width: 120px;
       height: auto;
   }
 
@@ -101,4 +100,29 @@
 
   }
 
- 
+  .previewImage {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    }
+    
+    input[type="file"] {
+      display: none;
+    }
+    
+    .custom-image-upload {
+      background-color: rgba(250, 152, 39, 0.8);
+      border: 1px solid rgb(250, 152, 39);
+      border-radius: 5px;
+      margin-left: 10px;
+      padding-left: 10px;
+      color: white;
+      width: 120px;
+      height: auto;
+    }
+
+    .custom-image-upload:hover{
+      cursor: pointer;
+      background-color: transparent;
+      color: rgb(221, 107, 0);
+  }

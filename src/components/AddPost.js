@@ -7,7 +7,7 @@ import '../styles/addPost.css';
 export default function AddPost() {
 
     const [text, setText] = useState();
-
+    const [image, setImage] = useState(); 
 
     
      const handleChange = (e) =>{
@@ -104,6 +104,12 @@ export default function AddPost() {
         //   updateImageUrl();
     }
 
+    const handleChangeImage = (e) => {
+        const file = URL.createObjectURL(e.target.files[0]);
+        setImage(file);
+
+    }
+
     return (
         <div id="form"><h2 id="sBigger">Add New Recipe</h2>
 
@@ -115,6 +121,12 @@ export default function AddPost() {
                         <label>Recipe Name: </label>
                         <input id='nameInput' type="text" onChange={handleChange}></input>
                         <button onClick={setName}>add Recipe name</button>
+                    </div>
+                    <div className='inputF'>
+                        <label for='image-input' class='custom-image-upload'>
+                            Upload Image </label>
+
+                        <input id='image-input' type='file' onChange={handleChangeImage}></input>
                     </div>
                     <div className='inputF'>
                     <label>Choose Category: </label>
@@ -153,6 +165,7 @@ export default function AddPost() {
                     <h3>Preview</h3>
                     <div className="preview">
                         <p>{RName}</p>
+                        <img className='previewImage' src={image} alt='no image'/>
                         <p>{addCategory}</p>
                         <p>{RDescription}</p>
                         <ul>{List(RIngredients2)}</ul>
